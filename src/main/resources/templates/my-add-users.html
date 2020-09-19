@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="col-md-6">
+    <a class="btn btn-info" href="#" th:href="@{/users}"> Back to User List </a>
+    <form action="#" class="form-horizontal"
+          th:action="@{/users}"
+          th:object="${user}"
+          method="post">
+        <fieldset>
+					<span class="pull-right">
+						    <input type="submit" id="submitButton" class="btn btn-success" th:value="Save">
+						    <input type="reset" id="resetButton" class="btn btn-danger" th:value="Reset"/>
+					</span>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th> Name</th>
+                    <th> Address</th>
+                </tr>
+                </thead>
+                <tbody>
+                <td><input th:placeholder="Name"
+                           th:field="*{name}" required/></td>
+
+                <td><input th:placeholder="Address"
+                           th:field="*{address}" required/></td>
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
